@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sonas</title>
+    <style>
+        body {
+            background-color: rgb(0, 0, 0);
+            background-size: cover;
+            backdrop-filter: blur(2px); /* Adjust the blur amount as needed */
+            color: rgb(14, 14, 14);
+            font-family: 'Sonas';  /* Use your custom font first, then fallback fonts */
+            text-align: center;
+            padding: 60px;
+            margin: 0; /* Remove default body margin */
+            height: 100vh; /* Set body height to 100% of viewport height */
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Center content horizontally and vertically */
+            align-items: center;
+            transition: background-size 0.3s ease-in-out; /* Add a smooth transition for the zoom effect */
+        }
+
+        #container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #myText {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 90px;
+            cursor: pointer;
+            margin-top: 110px;
+            overflow: hidden;
+            display: inline-block;
+        }
+
+        #myText span {
+            color: rgb(255, 187, 0);
+            transition: color 1s, text-shadow 0.3s;
+        }
+
+        #myText:hover span {
+            color: rgb(255, 187, 0);
+            transition: color 0.5s, text-shadow 0.3s;
+        }
+
+        #myButton {
+            background-color: black;
+            color: rgb(255, 187, 0);
+            border: 2px solid rgb(255, 153, 0);
+            padding: 10px 50px;
+            font-size: 16px;
+            cursor: pointer;
+            outline: none;
+            transition: 0.3s;
+            box-shadow: 0 0 30px rgb(255, 102, 0);
+            margin-top: 20px;
+        }
+
+        #myButton:hover {
+            background-color: rgb(0, 0, 0);
+            box-shadow: 0 0 20px rgb(229, 255, 0);
+            border: 2px solid rgb(229, 255, 0);
+            color: rgb(255, 251, 0);
+        }
+
+        #myButton2 {
+            background-color: black;
+            color: rgb(255, 187, 0);
+            border: 2px solid rgb(255, 153, 0);
+            padding: 10px 50px;
+            font-size: 16px;
+            cursor: pointer;
+            outline: none;
+            transition: 0.3s;
+            box-shadow: 0 0 30px rgb(255, 102, 0);
+            margin-top: 20px;
+        }
+
+        #myButton2:hover {
+            background-color: rgb(0, 0, 0);
+            box-shadow: 0 0 20px blue;
+            border: 2px solid blue;
+            color: rgb(17, 0, 255);
+        }
+
+        #description {
+            color: rgb(236, 221, 0);
+            text-shadow: 0 0 10px rgb(238, 255, 0); /* Red glow around the text */
+            font-size: 20px;
+            margin-left: -900px;
+        }
+
+        #myImage {
+            width: 400px; /* Adjust the width as needed */
+            height: auto; /* Maintain aspect ratio */
+            margin-top: 20px;
+            border: 2px solid rgb(229, 255, 0); /* Red border around the image */
+            box-shadow: 0 0 10px rgb(251, 255, 0); /* Red glow around the image */
+            position: fixed; /* Position the image to the right side */
+            right:  6%;
+            bottom: 0;
+            transform: translateY(-50%);
+            cursor: pointer;
+            transition: transform 0.5s ease; /* Add transition for the transform property */
+        }
+
+        #myImage:hover {
+            transform: translateY(-50%) scale(1.2); /* Enlarge the image on hover */
+        }
+        
+    </style>
+</head>
+<body>
+
+    <div id="container">
+        <p id="myText" onclick="location.href='https://discord.gg/k5Pj7VpMvG';">
+            <span>S</span>
+            <span>o</span>
+            <span>n</span>
+            <span>a</span>
+            <span>s</span>
+            <span>-</span>
+            <span>N</span>
+            <span>u</span>
+            <span>k</span>
+            <span>e</span>
+            <span>r</span>
+        </p>
+        <button id="myButton" onclick="location.href='https://cdn.discordapp.com/attachments/1201284930097922188/1201285126932410479/Eatherial.mcpack?ex=65c942f5&is=65b6cdf5&hm=7e6c2413cd465e7d003e0f43394c47c16d8027b0a5b0f19f5ce32172510e501b&';">Download</button>
+        <button id="myButton2" onclick="location.href='https://discord.gg/pEnRaS3932';">Discord</button>
+        <div id="description"></div>
+        
+        
+        <div id="description">Solas-Users
+        </div>
+        
+        <div id="description">-----------------------------------------------------------
+        </div>
+        
+        <div id="description">"The best discord nuker!" -Not Disclosed
+        </div>
+
+        
+        <div id="description">-----------------------------------------------------------
+        </div>
+
+        <div id="description">"Simple, easy and realy
+        </div>
+
+        <div id="description">Easy to use, thanks man!" -Unkown
+        </div>
+
+        
+        <div id="description">-----------------------------------------------------------
+        </div>
+
+    </div>
+    
+    <!-- Image linked to a URL -->
+    <img id="myImage" src="https://cdn.discordapp.com/attachments/1240899913370439734/1242695622759546900/image.png?ex=664ec5fc&is=664d747c&hm=a8a647f79f2399a80adcfcfe716c358718c7b0bd8ecd3d9a0aba3992492b6d0b&" alt="Right Side Image" onclick="location.href='https://example.com';">
+
+    <script>
+        const myText = document.getElementById('myText');
+        const letters = myText.getElementsByTagName('span');
+
+        function playSound(soundUrl) {
+            const audio = new Audio(soundUrl);
+            audio.play();
+        }
+
+        function colorChange(index) {
+            setTimeout(() => {
+                letters[index].style.color = 'yellow';
+            }, index * 100);
+
+            setTimeout(() => {
+                letters[index].style.color = 'orange';
+            }, (index + letters.length) * 100);
+        }
+
+        function loopAnimation() {
+            for (let i = 0; i < letters.length; i++) {
+                colorChange(i);
+            }
+            setTimeout(loopAnimation, letters.length * 200); // Total time for one loop
+        }
+
+        loopAnimation();
+
+        const body = document.body;
+
+        body.addEventListener('mousemove', (e) => {
+            const mouseX = e.clientX / window.innerWidth - 0.5;
+            const mouseY = e.clientY / window.innerHeight - 0.5;
+
+            body.style.backgroundPosition = `${mouseX * 100}px ${mouseY * 100}px`;
+        });
+
+        const backgroundMusic = document.getElementById('backgroundMusic');
+        backgroundMusic.play();
+
+        function showNotification() {
+            const notification = document.createElement('div');
+            notification.classList.add('notification');
+            notification.textContent = 'Welcome to The Eatherial Download Page!';
+
+            document.body.appendChild(notification);
+
+            setTimeout(() => {
+                notification.remove();
+            }, 5000); // Remove the notification after 5 seconds
+        }
+
+        showNotification();
+    </script>
+
+    <style>
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: black;
+            color: rgb(255, 0, 0);
+            border: 2px solid rgb(255, 0, 0);
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgb(255, 0, 0);
+        }
+    </style>
+</body>
+</html>
